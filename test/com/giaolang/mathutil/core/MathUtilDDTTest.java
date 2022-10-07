@@ -11,27 +11,11 @@ import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-@RunWith(value = Parameterized.class)  //class này chuẩn bị chơi trò
-//tách data ra khỏi câu lệnh xanh đỏ cho dễ kiểm soát các test case
-//Thư viện JUnit nó sẽ tự generate thêm code phía hậu trường, lúc biên
-//dịch để giúp hiện thực hoá ý tưởng DDT
-//ví dụ nó sẽ tự biết lấy data ở mảng 2 chiều nào đó nhồi vào hàm
-//assertEquals()
-//ép ta phải viết code theo cách nào đó định trước mới chạy đc
-//thư viện đó đc gọi tên mới: FRAMEWORK
+@RunWith(value = Parameterized.class)  
 public class MathUtilDDTTest {
 
-    //ta tự tạo ra 1 cái hàm, tên tuỳ ý, trả về mảng 2 chiều
-    //chứa danh sách data ta dự định nhồi vào hàm getF() và assertE()
-    //phần duyệt mảng để nhồi vào hàm test, FRAMEWORK sẽ tự lo, coder
-    //ko cần lo
-    
     @Parameterized.Parameters  //bộ data nè
-    public static Object[][] initData() {
-        //int a[] = {5, 10, 15, 20, 25};
-        //mảng có giá trị ngay lúc khai báo, 
-        //thì dùng {các phần tử cách nhau dấu ,}        
-        //Object arr1[][] = {{1, 0}, {1, 1}, {2, 2}, {6, 3}, {24, 4}, {120, 5}, {720, 6}};        
+    public static Object[][] initData() {         
         return new Integer[][] {
                             {1, 0},
                             {1, 1},
