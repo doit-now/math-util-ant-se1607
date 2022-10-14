@@ -39,8 +39,8 @@ public class MathUtil {
         if (n < 0 || n > 20)
             throw new IllegalArgumentException("Invalid n. N must be between 0..20");
         
-//        if (n == 0 || n == 1)
-//            return 1;  //CHỐT DỪNG ĐỆ QUY!!!
+        if (n == 0 || n == 1)
+            return 1;  //CHỐT DỪNG ĐỆ QUY!!!
         
         //từ 2! trở đi là đoạn code dưới đây!!!
         return n * getFactorial(n - 1);
