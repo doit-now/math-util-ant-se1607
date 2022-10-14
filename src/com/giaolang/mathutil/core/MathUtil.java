@@ -18,21 +18,50 @@ public class MathUtil {
     //Quy ước: ko có giai thừa âm
     //         0! = 1! = 1
     //         chỉ tính n từ 0..20, vì
-    //         21! vượt 18 con số 0, vượt long    
+    //         21! vượt 18 con số 0, vượt long 
+    
+    //viết hàm tính giai thừa theo style đệ quy!!! RECURSION
+    //n! = 1.2.3.4.5...n
+    //5! = 1.2.3.4.5
+    //5! = 4! x 5 = 5 x 4!
+    //4! = 1.2.3.4 = 3! x 4 = 4 x 3!
+    //3! = 3 x 2!
+    //2! = 2 x 1!
+    //1! = 1 
+    //n! = n x (n - 1)!
+    //LẶP LẠI CHÍNH MÌNH VỚI 1 QUY MÔ NHỎ HƠN
+    //n! = ~~~ RETURN N X (N - 1)!
+    //CHỮ GIAI THỪA XUẤT HIỆN 2 LẦN 
+    
+    
     public static long getFactorial(int n) {
         
         if (n < 0 || n > 20)
             throw new IllegalArgumentException("Invalid n. N must be between 0..20");
         
-        if (n == 0 || n == 1)
-            return 1;
+//        if (n == 0 || n == 1)
+//            return 1;  //CHỐT DỪNG ĐỆ QUY!!!
         
-        long product = 1; //biến tích luỹ acc/accumulation
-        for (int i = 2; i <= n; i++) 
-            product *= i;  //product = product * i;
+        //từ 2! trở đi là đoạn code dưới đây!!!
+        return n * getFactorial(n - 1);
+        //mình = mình x quy mô nhỏ hơn
         
-        return product;
     }
+    
+//    public static long getFactorial(int n) {
+//        
+//        if (n < 0 || n > 20)
+//            throw new IllegalArgumentException("Invalid n. N must be between 0..20");
+//        
+//        if (n == 0 || n == 1)
+//            return 1;
+//        
+//        long product = 1; //biến tích luỹ acc/accumulation
+//        for (int i = 2; i <= n; i++) 
+//            product *= i;  //product = product * i;
+//        
+//        return product;
+//    }
     
 }
 
